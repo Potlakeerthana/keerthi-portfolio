@@ -1,4 +1,4 @@
-<lov-code>
+
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import NavBar from '@/components/NavBar';
@@ -42,7 +42,7 @@ const Index = () => {
       <NavBar />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen pt-20 flex flex-col items-center justify-center px-6">
+      <section className="relative min-h-screen pt-20 flex flex-col items-center justify-center px-6" id="home">
         <div className="absolute inset-0 pointer-events-none">
           <FloatingFlower 
             color="pink" 
@@ -144,7 +144,7 @@ const Index = () => {
       </section>
       
       {/* Introduction Section */}
-      <section className="relative min-h-screen py-20 px-6 glass">
+      <section className="relative min-h-screen py-20 px-6 glass" id="about">
         <div className="container mx-auto max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
@@ -171,11 +171,11 @@ const Index = () => {
                 Currently pursuing Bachelor of Technology in Computer Science and Engineering (Data Science) at Sri Venkateswara College of Engineering and Technology with a CGPA of 8.7.
               </p>
               
-              <Link to="/contact">
+              <a href="#contact">
                 <Button className="rounded-full bg-gradient-to-r from-enchanted-pink to-enchanted-purple hover:from-enchanted-purple hover:to-enchanted-pink text-white">
                   Get in Touch
                 </Button>
-              </Link>
+              </a>
             </div>
             
             <div className="order-1 md:order-2 relative">
@@ -341,7 +341,7 @@ const Index = () => {
               glowColor="pink"
               className="h-full md:col-span-2"
             >
-              <h3 className="text-xl font-display font-bold mb-4">
+              <h3 className="text-xl font-display font-bold mb-4 flex items-center">
                 <Sparkles className="w-5 h-5 mr-2 text-enchanted-pink" />
                 Interpersonal Skills
               </h3>
@@ -688,4 +688,84 @@ const Index = () => {
                 <h3 className="text-xl font-display font-bold mb-6">Contact Information</h3>
                 
                 <div className="space-y-4">
-                  <div className="flex items
+                  <div className="flex items-center gap-3">
+                    <Mail className="w-5 h-5 text-enchanted-purple" />
+                    <a href="mailto:keerthichowdary8247@gmail.com" className="text-gray-700 hover:text-enchanted-purple transition-colors">
+                      keerthichowdary8247@gmail.com
+                    </a>
+                  </div>
+                  
+                  <div className="flex items-center gap-3">
+                    <Phone className="w-5 h-5 text-enchanted-purple" />
+                    <a href="tel:+918247223038" className="text-gray-700 hover:text-enchanted-purple transition-colors">
+                      +91-8247223038
+                    </a>
+                  </div>
+                </div>
+              </GlassmorphicCard>
+            </div>
+            
+            <div>
+              <GlassmorphicCard
+                glowColor="pink"
+                className="h-full"
+              >
+                <h3 className="text-xl font-display font-bold mb-6">Send a Message</h3>
+                
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-enchanted-pink/50"
+                      required
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Your Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-enchanted-pink/50"
+                      required
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                    <textarea
+                      id="message"
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      rows={4}
+                      className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-enchanted-pink/50"
+                      required
+                    ></textarea>
+                  </div>
+                  
+                  <Button 
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-enchanted-pink to-enchanted-purple hover:from-enchanted-purple hover:to-enchanted-pink text-white"
+                  >
+                    <span className="flex items-center">
+                      Send Message
+                      <Send className="ml-2 w-4 h-4" />
+                    </span>
+                  </Button>
+                </form>
+              </GlassmorphicCard>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Index;
