@@ -40,10 +40,10 @@ export default function NavBar() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-8">
           <NavLink to="/" label="Home" />
-          <NavLink to="/projects" label="Projects" />
-          <NavLink to="/skills" label="Skills" />
-          <NavLink to="/garden" label="Secret Garden" />
-          <NavLink to="/contact" label="Contact" />
+          <NavLink to="#projects" label="Projects" />
+          <NavLink to="#skills" label="Skills" />
+          <NavLink to="#garden" label="Secret Garden" />
+          <NavLink to="#contact" label="Contact" />
         </div>
       </div>
       
@@ -55,10 +55,10 @@ export default function NavBar() {
       >
         <div className="container mx-auto px-6 flex flex-col space-y-4">
           <NavLink to="/" label="Home" className="py-2" />
-          <NavLink to="/projects" label="Projects" className="py-2" />
-          <NavLink to="/skills" label="Skills" className="py-2" />
-          <NavLink to="/garden" label="Secret Garden" className="py-2" />
-          <NavLink to="/contact" label="Contact" className="py-2" />
+          <NavLink to="#projects" label="Projects" className="py-2" />
+          <NavLink to="#skills" label="Skills" className="py-2" />
+          <NavLink to="#garden" label="Secret Garden" className="py-2" />
+          <NavLink to="#contact" label="Contact" className="py-2" />
         </div>
       </div>
     </nav>

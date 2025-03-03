@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import NavBar from '@/components/NavBar';
@@ -10,11 +9,15 @@ import MagicCursor from '@/components/MagicCursor';
 import FallingPetals from '@/components/FallingPetals';
 import Firefly from '@/components/Firefly';
 import FloatingElement from '@/components/FloatingElements';
-import { ArrowDown, ArrowRight, Sparkles, Mail, Phone, ExternalLink, FileText, Code, Database, Briefcase, Award, GraduationCap } from 'lucide-react';
+import Butterfly from '@/components/Butterfly';
+import { ArrowDown, ArrowRight, Sparkles, Mail, Phone, ExternalLink, FileText, Code, Database, Briefcase, Award, GraduationCap, User, Send } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
   
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +27,11 @@ const Index = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    window.open(`mailto:keerthichowdary8247@gmail.com?subject=Portfolio Inquiry from ${name}&body=${message}%0A%0AFrom: ${email}`);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-enchanted-purple-light via-enchanted-pink-light to-white overflow-hidden">
@@ -54,6 +62,16 @@ const Index = () => {
             color="pink" 
             size="sm" 
             position={{ x: 20, y: 75 }} 
+          />
+          <Butterfly
+            color="pink"
+            size="md"
+            position={{ x: 85, y: 15 }}
+          />
+          <Butterfly
+            color="purple"
+            size="sm"
+            position={{ x: 25, y: 30 }}
           />
         </div>
         
@@ -89,7 +107,7 @@ const Index = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-6 animate-slideUp opacity-0" style={{ animationDelay: '0.8s' }}>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/Potlakeerthana/" target="_blank" rel="noopener noreferrer">
               <Button className="relative overflow-hidden group bg-gradient-to-r from-enchanted-purple to-enchanted-pink hover:from-enchanted-pink hover:to-enchanted-purple text-white rounded-full px-8 py-6">
                 <span className="relative z-10 flex items-center">
                   GitHub Profile
@@ -239,7 +257,7 @@ const Index = () => {
       </section>
       
       {/* Skills Section */}
-      <section className="py-20 px-6 bg-gradient-to-b from-white to-enchanted-pink-light/20">
+      <section id="skills" className="py-20 px-6 bg-gradient-to-b from-white to-enchanted-pink-light/20">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <div className="inline-block px-3 py-1 rounded-full bg-enchanted-purple/20 backdrop-blur-sm mb-4">
@@ -317,7 +335,7 @@ const Index = () => {
               glowColor="pink"
               className="h-full md:col-span-2"
             >
-              <h3 className="text-xl font-display font-bold mb-4 flex items-center">
+              <h3 className="text-xl font-display font-bold mb-4">
                 <Sparkles className="w-5 h-5 mr-2 text-enchanted-pink" />
                 Interpersonal Skills
               </h3>
@@ -331,7 +349,7 @@ const Index = () => {
       </section>
       
       {/* Projects Section */}
-      <section className="py-20 px-6 bg-white">
+      <section id="projects" className="py-20 px-6 bg-white">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <div className="inline-block px-3 py-1 rounded-full bg-enchanted-pink/20 backdrop-blur-sm mb-4">
@@ -522,6 +540,206 @@ const Index = () => {
                 </div>
               </div>
             </GlassmorphicCard>
+          </div>
+        </div>
+      </section>
+      
+      {/* Secret Garden Section */}
+      <section id="garden" className="py-20 px-6 bg-gradient-to-b from-white to-enchanted-green-light/30 relative overflow-hidden">
+        <div className="container mx-auto max-w-4xl relative z-10">
+          <div className="text-center mb-12">
+            <div className="inline-block px-3 py-1 rounded-full bg-enchanted-green/20 backdrop-blur-sm mb-4">
+              <span className="text-sm font-medium text-enchanted-green-dark flex items-center justify-center">
+                <Sparkles className="w-4 h-4 mr-1" />
+                Secret Garden
+              </span>
+            </div>
+            
+            <AnimatedHeading 
+              level={2}
+              glowColor="green"
+              className="mb-4"
+            >
+              A Magical Retreat
+            </AnimatedHeading>
+            
+            <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+              Welcome to my secret garden, a place of creativity and inspiration. Here I share thoughts, inspirations, and the little things that bring magic to my life.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <GlassmorphicCard
+              glowColor="green"
+              animated
+              className="h-full"
+            >
+              <h3 className="text-xl font-display font-bold mb-4">Inspiration Corner</h3>
+              <p className="text-gray-700 mb-4">
+                "The future belongs to those who believe in the beauty of their dreams." - Eleanor Roosevelt
+              </p>
+              <div className="relative h-40 overflow-hidden rounded-lg mb-4">
+                <div className="absolute inset-0 bg-gradient-forest opacity-30"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Sparkles className="w-12 h-12 text-enchanted-green" />
+                </div>
+              </div>
+            </GlassmorphicCard>
+            
+            <GlassmorphicCard
+              glowColor="pink"
+              animated
+              className="h-full"
+            >
+              <h3 className="text-xl font-display font-bold mb-4">Creative Musings</h3>
+              <p className="text-gray-700 mb-4">
+                Creativity is the greatest rebellion in existence. It's about finding your own path and expressing yourself in unique ways.
+              </p>
+              <div className="relative h-40 overflow-hidden rounded-lg">
+                <div className="absolute inset-0 bg-gradient-dream opacity-30"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <FloatingElement speed="slow">
+                    <Butterfly color="pink" position={{ x: 50, y: 50 }} size="md" />
+                  </FloatingElement>
+                </div>
+              </div>
+            </GlassmorphicCard>
+          </div>
+        </div>
+        
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
+        
+        <div className="absolute inset-0 pointer-events-none">
+          <Butterfly color="green" position={{ x: 10, y: 30 }} size="lg" />
+          <Butterfly color="gold" position={{ x: 80, y: 60 }} size="md" />
+          <Butterfly color="purple" position={{ x: 30, y: 70 }} size="sm" />
+        </div>
+      </section>
+      
+      {/* Contact Section */}
+      <section id="contact" className="py-20 px-6 bg-white">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-12">
+            <div className="inline-block px-3 py-1 rounded-full bg-enchanted-purple/20 backdrop-blur-sm mb-4">
+              <span className="text-sm font-medium text-enchanted-purple-dark flex items-center justify-center">
+                <Mail className="w-4 h-4 mr-1" />
+                Get in Touch
+              </span>
+            </div>
+            
+            <AnimatedHeading 
+              level={2}
+              glowColor="purple"
+              className="mb-4"
+            >
+              Contact Me
+            </AnimatedHeading>
+            
+            <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+              I'd love to hear from you! Whether you have a question, a project idea, or just want to say hello, feel free to reach out.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <GlassmorphicCard
+                glowColor="purple"
+                className="h-full"
+              >
+                <h3 className="text-xl font-display font-bold mb-6">Contact Information</h3>
+                
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-full bg-enchanted-purple/10 flex items-center justify-center flex-shrink-0">
+                      <User className="w-5 h-5 text-enchanted-purple" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-900">Full Name</h4>
+                      <p className="text-gray-700">Potla Keerthana</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-full bg-enchanted-purple/10 flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-5 h-5 text-enchanted-purple" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-900">Email</h4>
+                      <a href="mailto:keerthichowdary8247@gmail.com" className="text-enchanted-purple hover:underline">
+                        keerthichowdary8247@gmail.com
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 rounded-full bg-enchanted-purple/10 flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-5 h-5 text-enchanted-purple" />
+                    </div>
+                    <div>
+                      <h4 className="font-medium text-gray-900">Phone</h4>
+                      <a href="tel:+918247223038" className="text-enchanted-purple hover:underline">
+                        +91-8247223038
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </GlassmorphicCard>
+            </div>
+            
+            <div>
+              <GlassmorphicCard
+                glowColor="pink"
+                className="h-full"
+              >
+                <h3 className="text-xl font-display font-bold mb-6">Send Me a Message</h3>
+                
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                    <input 
+                      type="text" 
+                      id="name" 
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-enchanted-pink focus:border-transparent outline-none transition"
+                      required
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Your Email</label>
+                    <input 
+                      type="email" 
+                      id="email" 
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-enchanted-pink focus:border-transparent outline-none transition"
+                      required
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                    <textarea 
+                      id="message" 
+                      rows={4}
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-enchanted-pink focus:border-transparent outline-none transition"
+                      required
+                    />
+                  </div>
+                  
+                  <Button 
+                    type="submit"
+                    className="w-full bg-gradient-to-r from-enchanted-pink to-enchanted-purple hover:from-enchanted-purple hover:to-enchanted-pink text-white"
+                  >
+                    <Send className="w-4 h-4 mr-2" />
+                    Send Message
+                  </Button>
+                </form>
+              </GlassmorphicCard>
+            </div>
           </div>
         </div>
       </section>
