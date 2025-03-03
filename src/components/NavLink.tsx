@@ -1,6 +1,5 @@
 
 import { cn } from '@/lib/utils';
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 interface NavLinkProps {
@@ -12,16 +11,33 @@ interface NavLinkProps {
 export default function NavLink({ to, label, className }: NavLinkProps) {
   const [isHovering, setIsHovering] = useState(false);
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // Only handle scrolling for hash links
+    if (to.startsWith('#')) {
+      e.preventDefault();
+      const targetId = to.substring(1);
+      const targetElement = document.getElementById(targetId);
+      
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 100, // Offset for the navbar
+          behavior: 'smooth'
+        });
+      }
+    }
+  };
+
   return (
-    <Link
-      to={to}
+    <a
+      href={to}
       className={cn(
         'relative font-medium tracking-wide text-lg transition-all duration-300',
-        'hover:text-glow-pink',
+        'hover:text-glow-pink cursor-pointer',
         className
       )}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
+      onClick={handleClick}
     >
       <span className="relative z-10">{label}</span>
       <span
@@ -30,6 +46,6 @@ export default function NavLink({ to, label, className }: NavLinkProps) {
           isHovering ? 'w-full' : 'w-0'
         )}
       />
-    </Link>
+    </a>
   );
 }

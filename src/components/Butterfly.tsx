@@ -1,6 +1,7 @@
 
 import React from 'react';
 import FloatingElement from './FloatingElements';
+import { cn } from '@/lib/utils';
 
 interface ButterflyProps {
   color?: 'pink' | 'purple' | 'green' | 'gold';
@@ -61,8 +62,4 @@ export default function Butterfly({
       </FloatingElement>
     </div>
   );
-}
-
-function cn(...classes: (string | boolean | undefined)[]) {
-  return classes.filter(Boolean).join(' ');
 }

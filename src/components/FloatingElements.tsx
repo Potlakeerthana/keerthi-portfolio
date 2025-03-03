@@ -41,9 +41,9 @@ export default function FloatingElement({
     >
       {children}
       {type === 'butterfly' && (
-        <div className="butterfly-wings">
-          <div className="wing wing-left"></div>
-          <div className="wing wing-right"></div>
+        <div className="butterfly-wings absolute -z-10">
+          <div className="wing wing-left animate-flutter-left opacity-30"></div>
+          <div className="wing wing-right animate-flutter-right opacity-30"></div>
         </div>
       )}
     </div>

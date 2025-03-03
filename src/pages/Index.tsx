@@ -1,3 +1,4 @@
+<lov-code>
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import NavBar from '@/components/NavBar';
@@ -72,6 +73,11 @@ const Index = () => {
             color="purple"
             size="sm"
             position={{ x: 25, y: 30 }}
+          />
+          <Butterfly
+            color="green"
+            size="lg"
+            position={{ x: 60, y: 50 }}
           />
         </div>
         
@@ -346,10 +352,17 @@ const Index = () => {
             </GlassmorphicCard>
           </div>
         </div>
+        <div className="absolute right-5 bottom-10">
+          <Butterfly
+            color="purple"
+            size="md"
+            position={{ x: 90, y: 80 }}
+          />
+        </div>
       </section>
       
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-6 bg-white">
+      <section id="projects" className="py-20 px-6 bg-white relative">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <div className="inline-block px-3 py-1 rounded-full bg-enchanted-pink/20 backdrop-blur-sm mb-4">
@@ -405,6 +418,22 @@ const Index = () => {
               </div>
             </GlassmorphicCard>
           </div>
+        </div>
+        
+        <div className="absolute left-5 top-32">
+          <Butterfly
+            color="pink"
+            size="sm"
+            position={{ x: 5, y: 20 }}
+          />
+        </div>
+        
+        <div className="absolute right-10 bottom-20">
+          <Butterfly
+            color="gold"
+            size="md"
+            position={{ x: 90, y: 90 }}
+          />
         </div>
       </section>
       
@@ -492,7 +521,7 @@ const Index = () => {
       </section>
       
       {/* Internships Section */}
-      <section className="py-20 px-6 bg-white">
+      <section className="py-20 px-6 bg-white relative">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <div className="inline-block px-3 py-1 rounded-full bg-enchanted-purple/20 backdrop-blur-sm mb-4">
@@ -541,6 +570,14 @@ const Index = () => {
               </div>
             </GlassmorphicCard>
           </div>
+        </div>
+        
+        <div className="absolute left-10 bottom-20">
+          <Butterfly
+            color="pink"
+            size="sm"
+            position={{ x: 10, y: 90 }}
+          />
         </div>
       </section>
       
@@ -613,6 +650,8 @@ const Index = () => {
           <Butterfly color="green" position={{ x: 10, y: 30 }} size="lg" />
           <Butterfly color="gold" position={{ x: 80, y: 60 }} size="md" />
           <Butterfly color="purple" position={{ x: 30, y: 70 }} size="sm" />
+          <Butterfly color="pink" position={{ x: 65, y: 40 }} size="md" />
+          <Butterfly color="green" position={{ x: 45, y: 85 }} size="sm" />
         </div>
       </section>
       
@@ -649,139 +688,4 @@ const Index = () => {
                 <h3 className="text-xl font-display font-bold mb-6">Contact Information</h3>
                 
                 <div className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-enchanted-purple/10 flex items-center justify-center flex-shrink-0">
-                      <User className="w-5 h-5 text-enchanted-purple" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900">Full Name</h4>
-                      <p className="text-gray-700">Potla Keerthana</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-enchanted-purple/10 flex items-center justify-center flex-shrink-0">
-                      <Mail className="w-5 h-5 text-enchanted-purple" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900">Email</h4>
-                      <a href="mailto:keerthichowdary8247@gmail.com" className="text-enchanted-purple hover:underline">
-                        keerthichowdary8247@gmail.com
-                      </a>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-enchanted-purple/10 flex items-center justify-center flex-shrink-0">
-                      <Phone className="w-5 h-5 text-enchanted-purple" />
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900">Phone</h4>
-                      <a href="tel:+918247223038" className="text-enchanted-purple hover:underline">
-                        +91-8247223038
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </GlassmorphicCard>
-            </div>
-            
-            <div>
-              <GlassmorphicCard
-                glowColor="pink"
-                className="h-full"
-              >
-                <h3 className="text-xl font-display font-bold mb-6">Send Me a Message</h3>
-                
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
-                    <input 
-                      type="text" 
-                      id="name" 
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-enchanted-pink focus:border-transparent outline-none transition"
-                      required
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Your Email</label>
-                    <input 
-                      type="email" 
-                      id="email" 
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-enchanted-pink focus:border-transparent outline-none transition"
-                      required
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                    <textarea 
-                      id="message" 
-                      rows={4}
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-enchanted-pink focus:border-transparent outline-none transition"
-                      required
-                    />
-                  </div>
-                  
-                  <Button 
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-enchanted-pink to-enchanted-purple hover:from-enchanted-purple hover:to-enchanted-pink text-white"
-                  >
-                    <Send className="w-4 h-4 mr-2" />
-                    Send Message
-                  </Button>
-                </form>
-              </GlassmorphicCard>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Call to action */}
-      <section className="py-20 text-center px-6 bg-gradient-dream">
-        <div className="container mx-auto max-w-4xl">
-          <AnimatedHeading 
-            level={2}
-            glowColor="gold"
-            className="mb-6"
-          >
-            Ready to Explore More?
-          </AnimatedHeading>
-          
-          <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-            Let's connect and discuss how my skills and experience can contribute to your organization's success.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/projects">
-              <Button className="bg-gradient-to-r from-enchanted-purple to-enchanted-pink hover:opacity-90 text-white rounded-full px-8">
-                View Projects
-              </Button>
-            </Link>
-            
-            <a href="mailto:keerthichowdary8247@gmail.com">
-              <Button variant="outline" className="rounded-full px-8 border-enchanted-purple hover:bg-enchanted-purple/10">
-                Contact Me
-              </Button>
-            </a>
-          </div>
-        </div>
-      </section>
-      
-      <footer className="py-8 text-center text-gray-600 bg-white">
-        <div className="container mx-auto">
-          <p>© 2023 Potla Keerthana. Made with magic and code.</p>
-        </div>
-      </footer>
-    </div>
-  );
-};
-
-export default Index;
+                  <div className="flex items
