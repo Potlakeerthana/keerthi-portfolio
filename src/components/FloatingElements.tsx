@@ -7,7 +7,7 @@ interface FloatingElementProps {
   className?: string;
   delay?: 1 | 2 | 3;
   speed?: 'normal' | 'slow' | 'rapid';
-  type?: 'default' | 'butterfly';
+  type?: 'default' | 'butterfly' | 'tealeaf';
 }
 
 export default function FloatingElement({
@@ -36,6 +36,7 @@ export default function FloatingElement({
         speedClasses[speed],
         delayClasses[delay],
         type === 'butterfly' && 'butterfly-element',
+        type === 'tealeaf' && 'tea-leaf-element',
         className
       )}
     >
@@ -44,6 +45,11 @@ export default function FloatingElement({
         <div className="butterfly-wings absolute -z-10">
           <div className="wing wing-left animate-flutter-left opacity-30"></div>
           <div className="wing wing-right animate-flutter-right opacity-30"></div>
+        </div>
+      )}
+      {type === 'tealeaf' && (
+        <div className="tea-leaf-animation absolute -z-10 w-full h-full">
+          <div className="leaf-shadow opacity-20 w-full h-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-110 blur-sm"></div>
         </div>
       )}
     </div>

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import NavBar from '@/components/NavBar';
@@ -11,6 +10,7 @@ import FallingPetals from '@/components/FallingPetals';
 import Firefly from '@/components/Firefly';
 import FloatingElement from '@/components/FloatingElements';
 import Butterfly from '@/components/Butterfly';
+import { TeaCup, TeaLeaf, TeaBackground } from '@/components/TeaElements';
 import { ArrowDown, ArrowRight, Sparkles, Mail, Phone, ExternalLink, FileText, Code, Database, Briefcase, Award, GraduationCap, User, Send } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -143,84 +143,112 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Introduction Section */}
+      {/* Introduction Section - Tea Themed About */}
       <section className="relative min-h-screen py-20 px-6 glass" id="about">
-        <div className="container mx-auto max-w-5xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="order-2 md:order-1">
-              <div className="inline-block px-3 py-1 rounded-full bg-enchanted-pink/20 backdrop-blur-sm mb-4">
-                <span className="text-sm font-medium text-enchanted-pink-dark flex items-center">
-                  <Sparkles className="w-4 h-4 mr-1" />
-                  About Me
-                </span>
+        <TeaBackground density="low">
+          <div className="container mx-auto max-w-5xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="order-2 md:order-1">
+                <div className="inline-block px-3 py-1 rounded-full bg-enchanted-pink/20 backdrop-blur-sm mb-4">
+                  <span className="text-sm font-medium text-enchanted-pink-dark flex items-center">
+                    <Sparkles className="w-4 h-4 mr-1" />
+                    About Me
+                  </span>
+                </div>
+                
+                <AnimatedHeading 
+                  level={2}
+                  glowColor="pink"
+                  className="mb-6"
+                >
+                  <span className="relative">
+                    My Tea Story
+                    <FloatingElement className="absolute -top-8 -right-8 opacity-50">
+                      <TeaCup size="sm" color="pink" />
+                    </FloatingElement>
+                  </span>
+                </AnimatedHeading>
+                
+                <p className="text-gray-700 mb-4 leading-relaxed">
+                  Just like a perfectly brewed cup of tea, my work is a blend of creativity, passion, and attention to detail. I carefully select each ingredient in my projects, steeping them in innovation until they reach their full potential.
+                </p>
+                
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  Currently pursuing Bachelor of Technology in Computer Science and Engineering (Data Science) at Sri Venkateswara College of Engineering and Technology with a CGPA of 8.7, brewing excellence with each semester.
+                </p>
+                
+                <div className="mb-6 space-y-3">
+                  <h3 className="text-lg font-semibold text-enchanted-purple">Tech Tea Pairings:</h3>
+                  <div className="flex flex-wrap gap-3">
+                    <span className="px-4 py-2 rounded-full bg-enchanted-purple/10 text-enchanted-purple flex items-center">
+                      <TeaCup size="sm" color="purple" className="mr-2" steamAnimation={false} />
+                      Python – Best paired with a bold black tea
+                    </span>
+                    <span className="px-4 py-2 rounded-full bg-enchanted-green/10 text-enchanted-green flex items-center">
+                      <TeaCup size="sm" color="green" className="mr-2" steamAnimation={false} />
+                      SQL – A soothing green tea experience
+                    </span>
+                    <span className="px-4 py-2 rounded-full bg-enchanted-pink/10 text-enchanted-pink flex items-center">
+                      <TeaCup size="sm" color="pink" className="mr-2" steamAnimation={false} />
+                      Web Development – A fragrant floral blend
+                    </span>
+                  </div>
+                </div>
+                
+                <a href="#contact">
+                  <Button className="rounded-full bg-gradient-to-r from-enchanted-pink to-enchanted-purple hover:from-enchanted-purple hover:to-enchanted-pink text-white">
+                    Brew a Conversation
+                  </Button>
+                </a>
               </div>
               
-              <AnimatedHeading 
-                level={2}
-                glowColor="pink"
-                className="mb-6"
-              >
-                Summary
-              </AnimatedHeading>
-              
-              <p className="text-gray-700 mb-4 leading-relaxed">
-                To obtain a challenging and responsible position in a dynamic company. Utilizing my professional qualifications for the progress and the success of the organization and to update myself with the latest technologies, thus progressing in my career.
-              </p>
-              
-              <p className="text-gray-700 mb-6 leading-relaxed">
-                Currently pursuing Bachelor of Technology in Computer Science and Engineering (Data Science) at Sri Venkateswara College of Engineering and Technology with a CGPA of 8.7.
-              </p>
-              
-              <a href="#contact">
-                <Button className="rounded-full bg-gradient-to-r from-enchanted-pink to-enchanted-purple hover:from-enchanted-purple hover:to-enchanted-pink text-white">
-                  Get in Touch
-                </Button>
-              </a>
-            </div>
-            
-            <div className="order-1 md:order-2 relative">
-              <GlassmorphicCard 
-                glowColor="pink"
-                animated
-                className="p-0 overflow-hidden aspect-square flex items-center justify-center"
-              >
-                <div className="absolute inset-0 bg-gradient-dawn opacity-20" />
-                <div className="relative z-10 p-8 text-center">
-                  <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-enchanted-pink-light to-enchanted-pink mb-4 shadow-glow-pink">
-                    {/* Placeholder for profile image */}
-                    <div className="w-full h-full flex items-center justify-center text-white text-3xl font-bold">PK</div>
-                  </div>
-                  <h3 className="text-2xl font-display font-bold mb-2">Potla Keerthana</h3>
-                  <p className="text-gray-700 italic">"Creating magic at the intersection of data science and code"</p>
-                </div>
-              </GlassmorphicCard>
-              
-              <FloatingElement delay={2} speed="slow" className="absolute -bottom-8 -right-8 z-20">
+              <div className="order-1 md:order-2 relative">
                 <GlassmorphicCard 
-                  glowColor="purple"
-                  className="py-2 px-4"
+                  glowColor="pink"
+                  animated
+                  className="p-0 overflow-hidden aspect-square flex items-center justify-center"
                 >
-                  <div className="flex items-center">
-                    <div className="w-3 h-3 rounded-full bg-enchanted-purple mr-2 animate-pulse" />
-                    <span className="text-sm">Data Scientist</span>
+                  <div className="absolute inset-0 bg-gradient-dawn opacity-20" />
+                  <div className="relative z-10 p-8 text-center">
+                    <div className="w-48 h-48 mx-auto rounded-full overflow-hidden mb-4 shadow-glow-pink border-4 border-white/30">
+                      <img 
+                        src="/lovable-uploads/141cefa9-5c19-4b4f-8c1f-935a87cfdf34.png" 
+                        alt="Potla Keerthana" 
+                        className="w-full h-full object-cover" 
+                      />
+                    </div>
+                    <h3 className="text-2xl font-display font-bold mb-2">Potla Keerthana</h3>
+                    <p className="text-gray-700 italic">"Creating magic at the intersection of data science and code"</p>
                   </div>
                 </GlassmorphicCard>
-              </FloatingElement>
-              
-              <FloatingElement delay={1} className="absolute -top-8 -left-8 z-20">
-                <GlassmorphicCard 
-                  glowColor="green"
-                  className="py-2 px-4"
-                >
-                  <div className="flex items-center">
-                    <div className="w-3 h-3 rounded-full bg-enchanted-green mr-2 animate-pulse" />
-                    <span className="text-sm">Web Developer</span>
-                  </div>
-                </GlassmorphicCard>
-              </FloatingElement>
+                
+                <FloatingElement delay={2} speed="slow" className="absolute -bottom-8 -right-8 z-20">
+                  <GlassmorphicCard 
+                    glowColor="purple"
+                    className="py-2 px-4"
+                  >
+                    <div className="flex items-center">
+                      <div className="w-3 h-3 rounded-full bg-enchanted-purple mr-2 animate-pulse" />
+                      <span className="text-sm">Data Scientist</span>
+                    </div>
+                  </GlassmorphicCard>
+                </FloatingElement>
+                
+                <FloatingElement delay={1} className="absolute -top-8 -left-8 z-20">
+                  <GlassmorphicCard 
+                    glowColor="green"
+                    className="py-2 px-4"
+                  >
+                    <div className="flex items-center">
+                      <div className="w-3 h-3 rounded-full bg-enchanted-green mr-2 animate-pulse" />
+                      <span className="text-sm">Web Developer</span>
+                    </div>
+                  </GlassmorphicCard>
+                </FloatingElement>
+              </div>
             </div>
           </div>
-        </div>
+        </TeaBackground>
       </section>
       
       {/* Education Section */}
@@ -650,122 +678,4 @@ const Index = () => {
           <Butterfly color="green" position={{ x: 10, y: 30 }} size="lg" />
           <Butterfly color="gold" position={{ x: 80, y: 60 }} size="md" />
           <Butterfly color="purple" position={{ x: 30, y: 70 }} size="sm" />
-          <Butterfly color="pink" position={{ x: 65, y: 40 }} size="md" />
-          <Butterfly color="green" position={{ x: 45, y: 85 }} size="sm" />
-        </div>
-      </section>
-      
-      {/* Contact Section */}
-      <section id="contact" className="py-20 px-6 bg-white">
-        <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-12">
-            <div className="inline-block px-3 py-1 rounded-full bg-enchanted-purple/20 backdrop-blur-sm mb-4">
-              <span className="text-sm font-medium text-enchanted-purple-dark flex items-center justify-center">
-                <Mail className="w-4 h-4 mr-1" />
-                Get in Touch
-              </span>
-            </div>
-            
-            <AnimatedHeading 
-              level={2}
-              glowColor="purple"
-              className="mb-4"
-            >
-              Contact Me
-            </AnimatedHeading>
-            
-            <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-              I'd love to hear from you! Whether you have a question, a project idea, or just want to say hello, feel free to reach out.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <GlassmorphicCard
-                glowColor="purple"
-                className="h-full"
-              >
-                <h3 className="text-xl font-display font-bold mb-6">Contact Information</h3>
-                
-                <div className="space-y-4">
-                  <div className="flex items-center gap-3">
-                    <Mail className="w-5 h-5 text-enchanted-purple" />
-                    <a href="mailto:keerthichowdary8247@gmail.com" className="text-gray-700 hover:text-enchanted-purple transition-colors">
-                      keerthichowdary8247@gmail.com
-                    </a>
-                  </div>
-                  
-                  <div className="flex items-center gap-3">
-                    <Phone className="w-5 h-5 text-enchanted-purple" />
-                    <a href="tel:+918247223038" className="text-gray-700 hover:text-enchanted-purple transition-colors">
-                      +91-8247223038
-                    </a>
-                  </div>
-                </div>
-              </GlassmorphicCard>
-            </div>
-            
-            <div>
-              <GlassmorphicCard
-                glowColor="pink"
-                className="h-full"
-              >
-                <h3 className="text-xl font-display font-bold mb-6">Send a Message</h3>
-                
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
-                    <input
-                      type="text"
-                      id="name"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-enchanted-pink/50"
-                      required
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Your Email</label>
-                    <input
-                      type="email"
-                      id="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-enchanted-pink/50"
-                      required
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                    <textarea
-                      id="message"
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                      rows={4}
-                      className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-enchanted-pink/50"
-                      required
-                    ></textarea>
-                  </div>
-                  
-                  <Button 
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-enchanted-pink to-enchanted-purple hover:from-enchanted-purple hover:to-enchanted-pink text-white"
-                  >
-                    <span className="flex items-center">
-                      Send Message
-                      <Send className="ml-2 w-4 h-4" />
-                    </span>
-                  </Button>
-                </form>
-              </GlassmorphicCard>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  );
-};
-
-export default Index;
+          <Butterfly color="
