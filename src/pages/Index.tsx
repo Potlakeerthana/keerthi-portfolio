@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import NavBar from '@/components/NavBar';
@@ -678,4 +679,151 @@ const Index = () => {
           <Butterfly color="green" position={{ x: 10, y: 30 }} size="lg" />
           <Butterfly color="gold" position={{ x: 80, y: 60 }} size="md" />
           <Butterfly color="purple" position={{ x: 30, y: 70 }} size="sm" />
-          <Butterfly color="
+          <Butterfly color="pink" position={{ x: 60, y: 20 }} size="md" />
+        </div>
+      </section>
+      
+      {/* Contact Section - Tea Inspired */}
+      <section id="contact" className="relative py-20 px-6 bg-white">
+        <TeaBackground density="medium" animate={true}>
+          <div className="container mx-auto max-w-4xl relative z-10">
+            <div className="text-center mb-12">
+              <div className="inline-block px-3 py-1 rounded-full bg-enchanted-pink/20 backdrop-blur-sm mb-4">
+                <span className="text-sm font-medium text-enchanted-pink-dark flex items-center justify-center">
+                  <Mail className="w-4 h-4 mr-1" />
+                  Contact
+                </span>
+              </div>
+              
+              <AnimatedHeading 
+                level={2}
+                glowColor="pink"
+                className="mb-4"
+              >
+                <span className="relative">
+                  Let's Brew Something Together
+                  <FloatingElement className="absolute -top-10 -right-10 opacity-80">
+                    <TeaCup size="sm" color="pink" />
+                  </FloatingElement>
+                </span>
+              </AnimatedHeading>
+              
+              <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+                Ready to steep a conversation? Pour your thoughts below and let's create a perfect blend of ideas.
+              </p>
+            </div>
+            
+            <GlassmorphicCard
+              glowColor="purple"
+              className="relative overflow-hidden"
+            >
+              <div className="flex flex-col md:flex-row">
+                <div className="md:w-1/3 p-6 bg-gradient-to-br from-enchanted-purple/20 via-enchanted-pink/20 to-enchanted-purple/10">
+                  <h3 className="text-xl font-display font-bold mb-6 flex items-center">
+                    <TeaCup size="sm" color="purple" className="mr-3" />
+                    Tea Time Hours
+                  </h3>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="text-sm font-semibold uppercase text-enchanted-purple mb-2">Email</h4>
+                      <a href="mailto:keerthichowdary8247@gmail.com" className="text-gray-700 hover:text-enchanted-purple transition-colors">
+                        keerthichowdary8247@gmail.com
+                      </a>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-sm font-semibold uppercase text-enchanted-purple mb-2">Phone</h4>
+                      <a href="tel:+918247223038" className="text-gray-700 hover:text-enchanted-purple transition-colors">
+                        +91-8247223038
+                      </a>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-sm font-semibold uppercase text-enchanted-purple mb-2">Find Me On</h4>
+                      <div className="flex space-x-4 mt-2">
+                        <a href="https://github.com/Potlakeerthana/" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-enchanted-purple transition-colors">
+                          GitHub
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-enchanted-purple transition-colors">
+                          LinkedIn
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="absolute bottom-6 left-6">
+                    <FloatingElement speed="slow" delay={2} type="tealeaf">
+                      <TeaLeaf className="w-12 h-12 opacity-50" />
+                    </FloatingElement>
+                  </div>
+                </div>
+                
+                <div className="md:w-2/3 p-6">
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                      <input
+                        type="text"
+                        id="name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-enchanted-pink focus:border-transparent"
+                        placeholder="Enter your name"
+                        required
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Steep Your Email</label>
+                      <input
+                        type="email"
+                        id="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-enchanted-pink focus:border-transparent"
+                        placeholder="Where can I send my response?"
+                        required
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Brew Your Message</label>
+                      <textarea
+                        id="message"
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        rows={5}
+                        className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-enchanted-pink focus:border-transparent"
+                        placeholder="Pour your thoughts here..."
+                        required
+                      />
+                    </div>
+                    
+                    <Button type="submit" className="w-full bg-gradient-to-r from-enchanted-purple to-enchanted-pink hover:from-enchanted-pink hover:to-enchanted-purple text-white rounded-md py-2">
+                      <span className="flex items-center justify-center">
+                        <TeaCup size="sm" color="purple" steamAnimation={false} className="mr-2 opacity-80" />
+                        Serve My Message
+                      </span>
+                    </Button>
+                  </form>
+                </div>
+              </div>
+            </GlassmorphicCard>
+          </div>
+        </TeaBackground>
+      </section>
+      
+      {/* Footer */}
+      <footer className="py-8 px-6 bg-enchanted-purple/5 border-t border-enchanted-purple/10">
+        <div className="container mx-auto text-center">
+          <p className="text-gray-600">© 2024 Potla Keerthana. All rights reserved.</p>
+          <p className="text-gray-500 text-sm mt-2">Brewed with 💜 and magic.</p>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Index;
+
