@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import NavBar from '@/components/NavBar';
@@ -163,7 +162,7 @@ const Index = () => {
                   className="mb-6"
                 >
                   <span className="relative">
-                    My Tea Story
+                    The Tea Master's Blend
                     <FloatingElement className="absolute -top-8 -right-8 opacity-50">
                       <TeaCup size="sm" color="pink" />
                     </FloatingElement>
@@ -230,7 +229,7 @@ const Index = () => {
                   >
                     <div className="flex items-center">
                       <div className="w-3 h-3 rounded-full bg-enchanted-purple mr-2 animate-pulse" />
-                      <span className="text-sm">Data Scientist</span>
+                      <span className="text-sm">Web Developer</span>
                     </div>
                   </GlassmorphicCard>
                 </FloatingElement>
@@ -242,7 +241,7 @@ const Index = () => {
                   >
                     <div className="flex items-center">
                       <div className="w-3 h-3 rounded-full bg-enchanted-green mr-2 animate-pulse" />
-                      <span className="text-sm">Web Developer</span>
+                      <span className="text-sm">Data Scientist</span>
                     </div>
                   </GlassmorphicCard>
                 </FloatingElement>
@@ -274,7 +273,7 @@ const Index = () => {
           
           <GlassmorphicCard
             glowColor="green"
-            className="mb-12"
+            className="mb-8"
           >
             <div className="flex flex-col md:flex-row gap-6 items-start">
               <div className="flex-1">
@@ -284,6 +283,37 @@ const Index = () => {
                 <div className="flex items-center gap-4">
                   <span className="px-3 py-1 rounded-full bg-enchanted-green/10 text-enchanted-green text-sm">2021-25</span>
                   <span className="px-3 py-1 rounded-full bg-enchanted-green/10 text-enchanted-green text-sm">CGPA: 8.7</span>
+                </div>
+              </div>
+            </div>
+          </GlassmorphicCard>
+          
+          <GlassmorphicCard
+            glowColor="purple"
+            className="mb-8"
+          >
+            <div className="flex flex-col md:flex-row gap-6 items-start">
+              <div className="flex-1">
+                <h3 className="text-2xl font-display font-bold mb-2">Intermediate Education</h3>
+                <p className="text-lg text-enchanted-purple mb-1">S.L.N Junior College for Girls</p>
+                <div className="flex items-center gap-4">
+                  <span className="px-3 py-1 rounded-full bg-enchanted-purple/10 text-enchanted-purple text-sm">2019-21</span>
+                  <span className="px-3 py-1 rounded-full bg-enchanted-purple/10 text-enchanted-purple text-sm">92.8%</span>
+                </div>
+              </div>
+            </div>
+          </GlassmorphicCard>
+          
+          <GlassmorphicCard
+            glowColor="pink"
+          >
+            <div className="flex flex-col md:flex-row gap-6 items-start">
+              <div className="flex-1">
+                <h3 className="text-2xl font-display font-bold mb-2">10th Grade</h3>
+                <p className="text-lg text-enchanted-pink mb-1">A.P Model School</p>
+                <div className="flex items-center gap-4">
+                  <span className="px-3 py-1 rounded-full bg-enchanted-pink/10 text-enchanted-pink text-sm">2018-19</span>
+                  <span className="px-3 py-1 rounded-full bg-enchanted-pink/10 text-enchanted-pink text-sm">CGPA: 9.3</span>
                 </div>
               </div>
             </div>
@@ -683,7 +713,7 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Contact Section - Tea Inspired */}
+      {/* Contact Section - Tea Parlor */}
       <section id="contact" className="relative py-20 px-6 bg-white">
         <TeaBackground density="medium" animate={true}>
           <div className="container mx-auto max-w-4xl relative z-10">
@@ -701,7 +731,7 @@ const Index = () => {
                 className="mb-4"
               >
                 <span className="relative">
-                  Let's Brew Something Together
+                  The Tea Parlor
                   <FloatingElement className="absolute -top-10 -right-10 opacity-80">
                     <TeaCup size="sm" color="pink" />
                   </FloatingElement>
@@ -800,7 +830,7 @@ const Index = () => {
                       />
                     </div>
                     
-                    <Button type="submit" className="w-full bg-gradient-to-r from-enchanted-purple to-enchanted-pink hover:from-enchanted-pink hover:to-enchanted-purple text-white rounded-md py-2">
+                    <Button type="submit" className="w-full bg-gradient-to-r from-enchanted-purple to-enchanted-pink hover:from-enchanted-pink hover:to-enchanted-pink text-white rounded-md py-2">
                       <span className="flex items-center justify-center">
                         <TeaCup size="sm" color="purple" steamAnimation={false} className="mr-2 opacity-80" />
                         Serve My Message
@@ -826,4 +856,3 @@ const Index = () => {
 };
 
 export default Index;
-
