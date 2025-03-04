@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import NavBar from '@/components/NavBar';
@@ -174,15 +175,15 @@ const Index = () => {
                   </span>
                 </AnimatedHeading>
                 
-                <p className="text-gray-700 mb-4 leading-relaxed">
+                <p className="text-gray-700 mb-4 leading-relaxed transform transition-all duration-500 hover:translate-z-5 hover:scale-105">
                   Just like a perfectly brewed cup of tea, my work is a blend of creativity, passion, and attention to detail. I carefully select each ingredient in my projects, steeping them in innovation until they reach their full potential.
                 </p>
                 
-                <p className="text-gray-700 mb-6 leading-relaxed">
+                <p className="text-gray-700 mb-6 leading-relaxed transform transition-all duration-500 hover:translate-z-5 hover:scale-105">
                   Currently pursuing Bachelor of Technology in Computer Science and Engineering (Data Science) at Sri Venkateswara College of Engineering and Technology with a CGPA of 8.7, brewing excellence with each semester.
                 </p>
                 
-                <div className="mb-6 space-y-3 perspective-3d">
+                <div className="mb-6 space-y-3 perspective-3d transform-gpu rotate-y-0 transition-transform duration-1000 hover:rotate-y-5">
                   <h3 className="text-lg font-semibold text-enchanted-purple transform hover:translate-z-10 transition-transform">Tech Tea Pairings:</h3>
                   <div className="flex flex-wrap gap-3">
                     <span className="tea-pairing-card px-4 py-2 rounded-full bg-enchanted-purple/10 text-enchanted-purple flex items-center relative overflow-hidden group transform transition-all duration-300 hover:rotate-2 hover:scale-105 hover:shadow-glow-purple">
@@ -204,7 +205,7 @@ const Index = () => {
                 </div>
                 
                 <a href="#contact">
-                  <Button className="rounded-full bg-gradient-to-r from-enchanted-pink to-enchanted-purple hover:from-enchanted-purple hover:to-enchanted-pink text-white group relative overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-glow-pink">
+                  <Button className="rounded-full bg-gradient-to-r from-enchanted-pink to-enchanted-purple hover:from-enchanted-purple hover:to-enchanted-pink text-white group relative overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-glow-pink perspective-3d hover:translate-z-10">
                     <span className="relative z-10 flex items-center gap-2">
                       <TeaCup size="sm" color="purple" className="opacity-90" />
                       Brew a Conversation
@@ -214,8 +215,8 @@ const Index = () => {
                   </Button>
                 </a>
                 
-                <div className="absolute -left-20 bottom-20 opacity-30 transform rotate-45 pointer-events-none">
-                  <TeaLeaf className="w-32 h-32 animate-float-slow" />
+                <div className="absolute -left-20 bottom-20 opacity-30 transform rotate-45 pointer-events-none animate-float-slow">
+                  <TeaLeaf className="w-32 h-32" />
                 </div>
               </div>
               
@@ -226,7 +227,7 @@ const Index = () => {
                   className="p-0 overflow-hidden aspect-square flex items-center justify-center transform perspective-card"
                 >
                   <div className="absolute inset-0 bg-gradient-dawn opacity-20" />
-                  <div className="relative z-10 p-8 text-center transform transition-transform duration-500 hover:scale-105 hover:rotate-3">
+                  <div className="relative z-10 p-8 text-center transform transition-transform duration-500 hover:scale-105 hover:rotate-3 perspective-3d">
                     <div className="w-48 h-48 mx-auto rounded-full overflow-hidden mb-4 shadow-glow-pink border-4 border-white/30 photo-container transform hover:rotate-y-12 transition-all duration-500">
                       <img 
                         src="/lovable-uploads/141cefa9-5c19-4b4f-8c1f-935a87cfdf34.png" 
@@ -234,8 +235,8 @@ const Index = () => {
                         className="w-full h-full object-cover transform transition-transform duration-500 hover:scale-110" 
                       />
                     </div>
-                    <h3 className="text-2xl font-display font-bold mb-2 transform transition-all duration-300 hover:translate-y-[-5px]">Potla Keerthana</h3>
-                    <p className="text-gray-700 italic">"Creating magic at the intersection of data science and code"</p>
+                    <h3 className="text-2xl font-display font-bold mb-2 transform transition-all duration-300 hover:translate-y-[-5px] hover:translate-z-10">Potla Keerthana</h3>
+                    <p className="text-gray-700 italic transform transition-all duration-300 hover:translate-z-5">"Creating magic at the intersection of data science and code"</p>
                   </div>
                   <div className="photo-overlay"></div>
                 </GlassmorphicCard>
@@ -243,7 +244,7 @@ const Index = () => {
                 <FloatingElement delay={2} speed="slow" className="absolute -bottom-8 -right-8 z-20">
                   <GlassmorphicCard 
                     glowColor="purple"
-                    className="py-2 px-4 transform transition-all duration-300 hover:scale-105 hover:rotate-2"
+                    className="py-2 px-4 transform transition-all duration-300 hover:scale-105 hover:rotate-2 hover:translate-z-5"
                   >
                     <div className="flex items-center">
                       <div className="w-3 h-3 rounded-full bg-enchanted-purple mr-2 animate-pulse" />
@@ -254,7 +255,7 @@ const Index = () => {
                 
                 <div className="absolute top-[-10%] left-[10%] w-full h-full pointer-events-none">
                   <div className="tea-particle-container">
-                    {[...Array(5)].map((_, i) => (
+                    {[...Array(8)].map((_, i) => (
                       <div key={i} className={`tea-particle tea-particle-${i + 1}`}></div>
                     ))}
                   </div>
@@ -531,7 +532,7 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <GlassmorphicCard glowColor="gold" className="backdrop-blur-md">
+            <GlassmorphicCard glowColor="gold" className="backdrop-blur-md transform transition-all duration-300 hover:scale-105 hover:translate-z-5 perspective-3d">
               <div className="flex items-start gap-4">
                 <Award className="w-8 h-8 text-amber-500 flex-shrink-0" />
                 <div>
@@ -540,7 +541,7 @@ const Index = () => {
               </div>
             </GlassmorphicCard>
             
-            <GlassmorphicCard glowColor="gold" className="backdrop-blur-md">
+            <GlassmorphicCard glowColor="gold" className="backdrop-blur-md transform transition-all duration-300 hover:scale-105 hover:translate-z-5 perspective-3d">
               <div className="flex items-start gap-4">
                 <Award className="w-8 h-8 text-amber-500 flex-shrink-0" />
                 <div>
@@ -550,11 +551,41 @@ const Index = () => {
               </div>
             </GlassmorphicCard>
             
-            <GlassmorphicCard glowColor="gold" className="backdrop-blur-md">
+            <GlassmorphicCard glowColor="gold" className="backdrop-blur-md transform transition-all duration-300 hover:scale-105 hover:translate-z-5 perspective-3d">
               <div className="flex items-start gap-4">
                 <Award className="w-8 h-8 text-amber-500 flex-shrink-0" />
                 <div>
                   <h3 className="text-lg font-bold mb-1">SQL Certification</h3>
+                </div>
+              </div>
+            </GlassmorphicCard>
+            
+            <GlassmorphicCard glowColor="gold" className="backdrop-blur-md transform transition-all duration-300 hover:scale-105 hover:translate-z-5 perspective-3d">
+              <div className="flex items-start gap-4">
+                <Award className="w-8 h-8 text-amber-500 flex-shrink-0" />
+                <div>
+                  <h3 className="text-lg font-bold mb-1">AWS Cloud Practitioner Essentials</h3>
+                  <p className="text-sm text-gray-600">Provided by EDX</p>
+                </div>
+              </div>
+            </GlassmorphicCard>
+            
+            <GlassmorphicCard glowColor="gold" className="backdrop-blur-md transform transition-all duration-300 hover:scale-105 hover:translate-z-5 perspective-3d">
+              <div className="flex items-start gap-4">
+                <Award className="w-8 h-8 text-amber-500 flex-shrink-0" />
+                <div>
+                  <h3 className="text-lg font-bold mb-1">HTML Certification</h3>
+                  <p className="text-sm text-gray-600">Great Learning</p>
+                </div>
+              </div>
+            </GlassmorphicCard>
+            
+            <GlassmorphicCard glowColor="gold" className="backdrop-blur-md transform transition-all duration-300 hover:scale-105 hover:translate-z-5 perspective-3d">
+              <div className="flex items-start gap-4">
+                <Award className="w-8 h-8 text-amber-500 flex-shrink-0" />
+                <div>
+                  <h3 className="text-lg font-bold mb-1">Data Analysis With Python</h3>
+                  <p className="text-sm text-gray-600">IBM</p>
                 </div>
               </div>
             </GlassmorphicCard>
@@ -585,14 +616,15 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <GlassmorphicCard
               glowColor="purple"
-              className="relative transform perspective-card transition-all duration-300 hover:rotate-y-6"
+              className="relative transform perspective-card transition-all duration-500 hover:rotate-y-10 hover:scale-105"
             >
               <div className="absolute inset-0 rounded-lg overflow-hidden z-0">
                 <div className="absolute inset-0 bg-gradient-to-br from-enchanted-purple/20 to-enchanted-pink/20"></div>
+                <div className="tea-swirl-effect"></div>
               </div>
               
               <div className="relative z-10">
-                <div className="tea-set-3d mb-6 transform-gpu rotate-y-[-8deg] hover:rotate-y-[8deg] transition-all duration-300 perspective-700">
+                <div className="tea-set-3d mb-6 transform-gpu rotate-y-[-8deg] hover:rotate-y-[12deg] transition-all duration-500 perspective-700">
                   <div className="tea-cup-with-saucer relative">
                     <div className="saucer w-32 h-8 mx-auto rounded-full bg-gradient-to-r from-enchanted-purple/30 to-enchanted-purple/10 shadow-inner transform-gpu -rotate-x-60"></div>
                     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[70%]">
@@ -601,16 +633,16 @@ const Index = () => {
                   </div>
                 </div>
                 
-                <h3 className="text-xl font-display font-bold mb-6 text-center">Drop Me a Message</h3>
+                <h3 className="text-xl font-display font-bold mb-6 text-center transform transition-all duration-300 hover:translate-z-10 hover:scale-110">Drop Me a Message</h3>
                 
-                <p className="text-gray-700 mb-6 leading-relaxed">
+                <p className="text-gray-700 mb-6 leading-relaxed transform transition-all duration-300 hover:translate-z-5 hover:scale-105">
                   I'm always open to discussing new projects, opportunities or partnerships. Feel free to reach out using the form or contact details below.
                 </p>
                 
-                <div className="space-y-4">
-                  <a href="mailto:keerthichowdary8247@gmail.com" className="flex items-center gap-3 px-4 py-3 rounded-lg bg-enchanted-purple/10 hover:bg-enchanted-purple/20 transition-colors group">
-                    <div className="w-10 h-10 rounded-full bg-enchanted-purple/20 flex items-center justify-center">
-                      <Mail className="w-5 h-5 text-enchanted-purple" />
+                <div className="space-y-4 perspective-3d">
+                  <a href="mailto:keerthichowdary8247@gmail.com" className="flex items-center gap-3 px-4 py-3 rounded-lg bg-enchanted-purple/10 hover:bg-enchanted-purple/20 transition-colors group transform hover:translate-z-10 hover:scale-105">
+                    <div className="w-10 h-10 rounded-full bg-enchanted-purple/20 flex items-center justify-center transform-gpu transition-transform group-hover:rotate-y-180">
+                      <Mail className="w-5 h-5 text-enchanted-purple transform-gpu transition-transform group-hover:rotate-y-180" />
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">Email</div>
@@ -618,9 +650,9 @@ const Index = () => {
                     </div>
                   </a>
                   
-                  <a href="tel:+918247223038" className="flex items-center gap-3 px-4 py-3 rounded-lg bg-enchanted-purple/10 hover:bg-enchanted-purple/20 transition-colors group">
-                    <div className="w-10 h-10 rounded-full bg-enchanted-purple/20 flex items-center justify-center">
-                      <Phone className="w-5 h-5 text-enchanted-purple" />
+                  <a href="tel:+918247223038" className="flex items-center gap-3 px-4 py-3 rounded-lg bg-enchanted-purple/10 hover:bg-enchanted-purple/20 transition-colors group transform hover:translate-z-10 hover:scale-105">
+                    <div className="w-10 h-10 rounded-full bg-enchanted-purple/20 flex items-center justify-center transform-gpu transition-transform group-hover:rotate-y-180">
+                      <Phone className="w-5 h-5 text-enchanted-purple transform-gpu transition-transform group-hover:rotate-y-180" />
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">Phone</div>
@@ -634,58 +666,58 @@ const Index = () => {
             <div className="relative">
               <GlassmorphicCard
                 glowColor="pink"
-                className="transform transition-all duration-500 hover:translate-z-10 hover:scale-[1.02]"
+                className="transform transition-all duration-500 hover:translate-z-10 hover:scale-[1.02] hover:rotate-3 perspective-3d"
               >
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="form-group-3d relative transform-gpu transition-all duration-300 hover:translate-z-8">
+                  <div className="form-group-3d relative transform-gpu transition-all duration-300 hover:translate-z-8 perspective-3d">
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1 transform transition-all duration-300 group-hover:translate-y-[-2px]">Your Name</label>
-                    <div className="relative">
+                    <div className="relative perspective-card">
                       <input
                         type="text"
                         id="name"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
-                        className="w-full px-4 py-3 rounded-lg bg-white/50 border border-enchanted-pink/30 focus:border-enchanted-pink focus:ring-2 focus:ring-enchanted-pink/20 transition-all shadow-sm"
+                        className="w-full px-4 py-3 rounded-lg bg-white/50 border border-enchanted-pink/30 focus:border-enchanted-pink focus:ring-2 focus:ring-enchanted-pink/20 transition-all shadow-sm transform hover:translate-z-5"
                         required
                       />
                       <div className="tea-input-effect absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-enchanted-pink to-enchanted-purple transform scale-x-0 origin-left transition-transform group-hover:scale-x-100"></div>
                     </div>
                   </div>
                   
-                  <div className="form-group-3d relative transform-gpu transition-all duration-300 hover:translate-z-8">
+                  <div className="form-group-3d relative transform-gpu transition-all duration-300 hover:translate-z-8 perspective-3d">
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1 transform transition-all duration-300 group-hover:translate-y-[-2px]">Your Email</label>
-                    <div className="relative">
+                    <div className="relative perspective-card">
                       <input
                         type="email"
                         id="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                        className="w-full px-4 py-3 rounded-lg bg-white/50 border border-enchanted-pink/30 focus:border-enchanted-pink focus:ring-2 focus:ring-enchanted-pink/20 transition-all shadow-sm"
+                        className="w-full px-4 py-3 rounded-lg bg-white/50 border border-enchanted-pink/30 focus:border-enchanted-pink focus:ring-2 focus:ring-enchanted-pink/20 transition-all shadow-sm transform hover:translate-z-5"
                         required
                       />
                       <div className="tea-input-effect absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-enchanted-pink to-enchanted-purple transform scale-x-0 origin-left transition-transform group-hover:scale-x-100"></div>
                     </div>
                   </div>
                   
-                  <div className="form-group-3d relative transform-gpu transition-all duration-300 hover:translate-z-8">
+                  <div className="form-group-3d relative transform-gpu transition-all duration-300 hover:translate-z-8 perspective-3d">
                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1 transform transition-all duration-300 group-hover:translate-y-[-2px]">Your Message</label>
-                    <div className="relative">
+                    <div className="relative perspective-card">
                       <textarea
                         id="message"
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         rows={5}
-                        className="w-full px-4 py-3 rounded-lg bg-white/50 border border-enchanted-pink/30 focus:border-enchanted-pink focus:ring-2 focus:ring-enchanted-pink/20 transition-all shadow-sm"
+                        className="w-full px-4 py-3 rounded-lg bg-white/50 border border-enchanted-pink/30 focus:border-enchanted-pink focus:ring-2 focus:ring-enchanted-pink/20 transition-all shadow-sm transform hover:translate-z-5"
                         required
                       ></textarea>
                       <div className="tea-input-effect absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-enchanted-pink to-enchanted-purple transform scale-x-0 origin-left transition-transform group-hover:scale-x-100"></div>
                     </div>
                   </div>
                   
-                  <div className="tea-button-3d-container perspective-3d">
+                  <div className="tea-button-3d-container perspective-3d transform transition-all duration-300 hover:rotate-y-5">
                     <Button 
                       type="submit" 
-                      className="w-full py-6 rounded-lg bg-gradient-to-r from-enchanted-pink to-enchanted-purple hover:from-enchanted-purple hover:to-enchanted-pink text-white font-medium transform transition-all duration-300 hover:translate-z-4 hover:scale-[1.02] relative overflow-hidden group"
+                      className="w-full py-6 rounded-lg bg-gradient-to-r from-enchanted-pink to-enchanted-purple hover:from-enchanted-purple hover:to-enchanted-pink text-white font-medium transform transition-all duration-500 hover:translate-z-8 hover:scale-[1.05] relative overflow-hidden group"
                     >
                       <span className="relative z-10 flex items-center justify-center gap-2">
                         <Send className="w-5 h-5" />
@@ -693,6 +725,7 @@ const Index = () => {
                       </span>
                       <div className="tea-pour absolute top-0 left-1/2 -translate-x-1/2 w-1 h-0 bg-white/30 group-hover:h-full transition-all duration-700"></div>
                       <div className="tea-splash absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0 opacity-0 group-hover:w-full group-hover:h-12 group-hover:opacity-100 transition-all duration-500 delay-300 rounded-full bg-white/20"></div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-enchanted-purple/0 via-enchanted-purple/20 to-enchanted-purple/0 transform -translate-x-full group-hover:translate-x-full transition-all duration-1000 z-0"></div>
                     </Button>
                   </div>
                 </form>
@@ -700,7 +733,7 @@ const Index = () => {
               
               <div className="absolute -z-10 inset-0 overflow-hidden pointer-events-none">
                 <div className="tea-leaves-floating">
-                  {[...Array(5)].map((_, i) => (
+                  {[...Array(8)].map((_, i) => (
                     <div key={i} className={`absolute tea-leaf-float-${i + 1}`} style={{
                       top: `${Math.random() * 100}%`,
                       left: `${Math.random() * 100}%`,
