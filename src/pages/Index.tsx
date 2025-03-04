@@ -164,9 +164,9 @@ const Index = () => {
                 >
                   <span className="relative">
                     Keerthi
-                    <FloatingElement className="absolute -top-8 -right-8 opacity-50">
+                    <FloatingElement className="absolute -top-8 -right-8 opacity-50 transform-gpu animate-pulse">
                       <div className="tea-steam-container">
-                        <TeaCup size="sm" color="pink" />
+                        <TeaCup size="sm" color="pink" className="animate-[rotateTeacup_8s_ease-in-out_infinite]" />
                         <div className="tea-steam-enhanced">
                           <div className="steam-particle-enhanced steam-1"></div>
                           <div className="steam-particle-enhanced steam-2"></div>
@@ -185,33 +185,41 @@ const Index = () => {
                   Currently pursuing Bachelor of Technology in Computer Science and Engineering (Data Science) at Sri Venkateswara College of Engineering and Technology with a CGPA of 8.7, brewing excellence with each semester.
                 </p>
                 
-                <div className="mb-6 space-y-3">
-                  <h3 className="text-lg font-semibold text-enchanted-purple">Tech Tea Pairings:</h3>
+                <div className="mb-6 space-y-3 perspective-3d">
+                  <h3 className="text-lg font-semibold text-enchanted-purple transform hover:translate-z-10 transition-transform">Tech Tea Pairings:</h3>
                   <div className="flex flex-wrap gap-3">
-                    <span className="tea-pairing-card px-4 py-2 rounded-full bg-enchanted-purple/10 text-enchanted-purple flex items-center relative overflow-hidden group">
-                      <TeaCup size="sm" color="purple" className="mr-2 tea-cup-rotate" steamAnimation={false} />
-                      <span className="relative z-10">Python – Best paired with a bold black tea</span>
+                    <span className="tea-pairing-card px-4 py-2 rounded-full bg-enchanted-purple/10 text-enchanted-purple flex items-center relative overflow-hidden group transform transition-all duration-300 hover:rotate-2 hover:scale-105 hover:shadow-glow-purple">
+                      <TeaCup size="sm" color="purple" className="mr-2 tea-cup-rotate transform transition-transform group-hover:rotate-12" steamAnimation={false} />
+                      <span className="relative z-10 transform transition-transform group-hover:translate-y-[-2px]">Python – Best paired with a bold black tea</span>
                       <div className="absolute inset-0 bg-gradient-to-r from-enchanted-purple/0 to-enchanted-purple/20 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
                     </span>
-                    <span className="tea-pairing-card px-4 py-2 rounded-full bg-enchanted-green/10 text-enchanted-green flex items-center relative overflow-hidden group">
-                      <TeaCup size="sm" color="green" className="mr-2 tea-cup-rotate" steamAnimation={false} />
-                      <span className="relative z-10">SQL – A soothing green tea experience</span>
+                    <span className="tea-pairing-card px-4 py-2 rounded-full bg-enchanted-green/10 text-enchanted-green flex items-center relative overflow-hidden group transform transition-all duration-300 hover:rotate-1 hover:scale-105 hover:shadow-glow-green">
+                      <TeaCup size="sm" color="green" className="mr-2 tea-cup-rotate transform transition-transform group-hover:rotate-12" steamAnimation={false} />
+                      <span className="relative z-10 transform transition-transform group-hover:translate-y-[-2px]">SQL – A soothing green tea experience</span>
                       <div className="absolute inset-0 bg-gradient-to-r from-enchanted-green/0 to-enchanted-green/20 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
                     </span>
-                    <span className="tea-pairing-card px-4 py-2 rounded-full bg-enchanted-pink/10 text-enchanted-pink flex items-center relative overflow-hidden group">
-                      <TeaCup size="sm" color="pink" className="mr-2 tea-cup-rotate" steamAnimation={false} />
-                      <span className="relative z-10">Web Development – A fragrant floral blend</span>
+                    <span className="tea-pairing-card px-4 py-2 rounded-full bg-enchanted-pink/10 text-enchanted-pink flex items-center relative overflow-hidden group transform transition-all duration-300 hover:rotate-1 hover:scale-105 hover:shadow-glow-pink">
+                      <TeaCup size="sm" color="pink" className="mr-2 tea-cup-rotate transform transition-transform group-hover:rotate-12" steamAnimation={false} />
+                      <span className="relative z-10 transform transition-transform group-hover:translate-y-[-2px]">Web Development – A fragrant floral blend</span>
                       <div className="absolute inset-0 bg-gradient-to-r from-enchanted-pink/0 to-enchanted-pink/20 transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
                     </span>
                   </div>
                 </div>
                 
                 <a href="#contact">
-                  <Button className="rounded-full bg-gradient-to-r from-enchanted-pink to-enchanted-purple hover:from-enchanted-purple hover:to-enchanted-pink text-white group relative overflow-hidden">
-                    <span className="relative z-10">Brew a Conversation</span>
+                  <Button className="rounded-full bg-gradient-to-r from-enchanted-pink to-enchanted-purple hover:from-enchanted-purple hover:to-enchanted-pink text-white group relative overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-glow-pink">
+                    <span className="relative z-10 flex items-center gap-2">
+                      <TeaCup size="xs" color="purple" className="opacity-90" />
+                      Brew a Conversation
+                      <span className="tea-steam-mini"></span>
+                    </span>
                     <span className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
                   </Button>
                 </a>
+                
+                <div className="absolute -left-20 bottom-20 opacity-30 transform rotate-45 pointer-events-none">
+                  <TeaLeaf className="w-32 h-32 animate-float-slow" />
+                </div>
               </div>
               
               <div className="order-1 md:order-2 relative">
@@ -221,15 +229,15 @@ const Index = () => {
                   className="p-0 overflow-hidden aspect-square flex items-center justify-center transform perspective-card"
                 >
                   <div className="absolute inset-0 bg-gradient-dawn opacity-20" />
-                  <div className="relative z-10 p-8 text-center transform transition-transform duration-500 hover:scale-105">
-                    <div className="w-48 h-48 mx-auto rounded-full overflow-hidden mb-4 shadow-glow-pink border-4 border-white/30 photo-container">
+                  <div className="relative z-10 p-8 text-center transform transition-transform duration-500 hover:scale-105 hover:rotate-3">
+                    <div className="w-48 h-48 mx-auto rounded-full overflow-hidden mb-4 shadow-glow-pink border-4 border-white/30 photo-container transform hover:rotate-y-12 transition-all duration-500">
                       <img 
                         src="/lovable-uploads/141cefa9-5c19-4b4f-8c1f-935a87cfdf34.png" 
                         alt="Potla Keerthana" 
-                        className="w-full h-full object-cover" 
+                        className="w-full h-full object-cover transform transition-transform duration-500 hover:scale-110" 
                       />
                     </div>
-                    <h3 className="text-2xl font-display font-bold mb-2">Potla Keerthana</h3>
+                    <h3 className="text-2xl font-display font-bold mb-2 transform transition-all duration-300 hover:translate-y-[-5px]">Potla Keerthana</h3>
                     <p className="text-gray-700 italic">"Creating magic at the intersection of data science and code"</p>
                   </div>
                   <div className="photo-overlay"></div>
@@ -238,7 +246,7 @@ const Index = () => {
                 <FloatingElement delay={2} speed="slow" className="absolute -bottom-8 -right-8 z-20">
                   <GlassmorphicCard 
                     glowColor="purple"
-                    className="py-2 px-4"
+                    className="py-2 px-4 transform transition-all duration-300 hover:scale-105 hover:rotate-2"
                   >
                     <div className="flex items-center">
                       <div className="w-3 h-3 rounded-full bg-enchanted-purple mr-2 animate-pulse" />
@@ -246,6 +254,14 @@ const Index = () => {
                     </div>
                   </GlassmorphicCard>
                 </FloatingElement>
+                
+                <div className="absolute top-[-10%] left-[10%] w-full h-full pointer-events-none">
+                  <div className="tea-particle-container">
+                    {[...Array(5)].map((_, i) => (
+                      <div key={i} className={`tea-particle tea-particle-${i + 1}`}></div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -733,10 +749,11 @@ const Index = () => {
               >
                 <span className="relative">
                   The Tea Parlor
-                  <FloatingElement className="absolute -top-10 -right-10 opacity-80">
-                    <div className="teacup-3d">
-                      <TeaCup size="sm" color="pink" />
+                  <FloatingElement className="absolute -top-10 -right-10 opacity-80 transform-gpu animate-float">
+                    <div className="teacup-3d transform-gpu transition-transform duration-500 hover:rotate-y-30 hover:rotate-z-15">
+                      <TeaCup size="sm" color="pink" className="relative z-10 tea-cup-gloss" />
                       <div className="teacup-saucer"></div>
+                      <div className="teacup-reflection"></div>
                     </div>
                   </FloatingElement>
                 </span>
@@ -749,32 +766,33 @@ const Index = () => {
             
             <GlassmorphicCard
               glowColor="purple"
-              className="relative overflow-hidden tea-parlor-card"
+              className="relative overflow-hidden tea-parlor-card transform perspective-1000"
             >
-              <div className="tea-leaves-bg"></div>
+              <div className="tea-leaves-bg animate-float-slow"></div>
+              <div className="tea-swirl-effect"></div>
               <div className="flex flex-col md:flex-row">
-                <div className="md:w-1/3 p-6 bg-gradient-to-br from-enchanted-purple/20 via-enchanted-pink/20 to-enchanted-purple/10 relative">
-                  <h3 className="text-xl font-display font-bold mb-6 flex items-center">
-                    <TeaCup size="sm" color="purple" className="mr-3" />
+                <div className="md:w-1/3 p-6 bg-gradient-to-br from-enchanted-purple/20 via-enchanted-pink/20 to-enchanted-purple/10 relative transform transition-all duration-500 hover:translate-x-2">
+                  <h3 className="text-xl font-display font-bold mb-6 flex items-center transform transition-transform hover:translate-y-[-3px]">
+                    <TeaCup size="sm" color="purple" className="mr-3 tea-cup-rotate" />
                     Tea Time Hours
                   </h3>
                   
                   <div className="space-y-6">
-                    <div>
+                    <div className="transform transition-all duration-300 hover:translate-x-2 hover:translate-y-[-2px]">
                       <h4 className="text-sm font-semibold uppercase text-enchanted-purple mb-2">Email</h4>
                       <a href="mailto:keerthichowdary8247@gmail.com" className="text-gray-700 hover:text-enchanted-purple transition-colors">
                         keerthichowdary8247@gmail.com
                       </a>
                     </div>
                     
-                    <div>
+                    <div className="transform transition-all duration-300 hover:translate-x-2 hover:translate-y-[-2px]">
                       <h4 className="text-sm font-semibold uppercase text-enchanted-purple mb-2">Phone</h4>
                       <a href="tel:+918247223038" className="text-gray-700 hover:text-enchanted-purple transition-colors">
                         +91-8247223038
                       </a>
                     </div>
                     
-                    <div>
+                    <div className="transform transition-all duration-300 hover:translate-x-2 hover:translate-y-[-2px]">
                       <h4 className="text-sm font-semibold uppercase text-enchanted-purple mb-2">Find Me On</h4>
                       <div className="flex space-x-4 mt-2">
                         <a href="https://github.com/Potlakeerthana/" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-enchanted-purple transition-colors">
@@ -789,64 +807,84 @@ const Index = () => {
                   
                   <div className="absolute bottom-6 left-6">
                     <FloatingElement speed="slow" delay={2} type="tealeaf">
-                      <TeaLeaf className="w-12 h-12 opacity-50" />
+                      <TeaLeaf className="w-12 h-12 opacity-50 tea-leaf-gloss" />
                     </FloatingElement>
                   </div>
                 </div>
                 
-                <div className="md:w-2/3 p-6">
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="tea-form-field">
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
-                      <input
-                        type="text"
-                        id="name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-enchanted-pink focus:border-transparent transition-all duration-300"
-                        placeholder="Enter your name"
-                        required
-                      />
-                      <div className="tea-field-drip"></div>
-                    </div>
-                    
-                    <div className="tea-form-field">
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Steep Your Email</label>
-                      <input
-                        type="email"
-                        id="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-enchanted-pink focus:border-transparent transition-all duration-300"
-                        placeholder="Where can I send my response?"
-                        required
-                      />
-                      <div className="tea-field-drip"></div>
-                    </div>
-                    
-                    <div className="tea-form-field">
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Brew Your Message</label>
-                      <textarea
-                        id="message"
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-                        rows={5}
-                        className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-enchanted-pink focus:border-transparent transition-all duration-300"
-                        placeholder="Pour your thoughts here..."
-                        required
-                      />
-                      <div className="tea-field-drip tea-field-drip-large"></div>
-                    </div>
-                    
-                    <Button type="submit" className="tea-submit-button w-full relative overflow-hidden bg-gradient-to-r from-enchanted-purple to-enchanted-pink hover:from-enchanted-pink hover:to-enchanted-pink text-white rounded-md py-2 group">
-                      <span className="relative z-10 flex items-center justify-center">
-                        <TeaCup size="sm" color="purple" steamAnimation={false} className="mr-2 opacity-80" />
-                        Serve My Message
-                        <span className="tea-submit-splash"></span>
-                      </span>
-                      <span className="absolute inset-0 bg-white/20 transform scale-0 group-hover:scale-100 transition-all duration-500 origin-bottom rounded-full"></span>
-                    </Button>
-                  </form>
+                <div className="md:w-2/3 p-6 relative">
+                  <div className="tea-form-container transform transition-all duration-500 hover:translate-y-[-5px]">
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      <div className="tea-form-field group">
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1 transform transition-transform group-hover:translate-y-[-2px]">Your Name</label>
+                        <input
+                          type="text"
+                          id="name"
+                          value={name}
+                          onChange={(e) => setName(e.target.value)}
+                          className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-enchanted-pink focus:border-transparent transition-all duration-300"
+                          placeholder="Enter your name"
+                          required
+                        />
+                        <div className="tea-field-drip"></div>
+                        <div className="tea-field-ripple"></div>
+                      </div>
+                      
+                      <div className="tea-form-field group">
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1 transform transition-transform group-hover:translate-y-[-2px]">
+                          <span className="flex items-center gap-1">
+                            <TeaCup size="xs" color="pink" className="opacity-70" />
+                            Steep Your Email
+                          </span>
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-enchanted-pink focus:border-transparent transition-all duration-300"
+                          placeholder="Where can I send my response?"
+                          required
+                        />
+                        <div className="tea-field-drip"></div>
+                        <div className="tea-field-ripple"></div>
+                      </div>
+                      
+                      <div className="tea-form-field group">
+                        <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1 transform transition-transform group-hover:translate-y-[-2px]">
+                          <span className="flex items-center gap-1">
+                            <TeaLeaf className="w-4 h-4 opacity-70 rotate-45" />
+                            Brew Your Message
+                          </span>
+                        </label>
+                        <textarea
+                          id="message"
+                          value={message}
+                          onChange={(e) => setMessage(e.target.value)}
+                          rows={5}
+                          className="w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-enchanted-pink focus:border-transparent transition-all duration-300"
+                          placeholder="Pour your thoughts here..."
+                          required
+                        />
+                        <div className="tea-field-drip tea-field-drip-large"></div>
+                        <div className="tea-field-ripple tea-field-ripple-large"></div>
+                      </div>
+                      
+                      <Button type="submit" className="tea-submit-button w-full relative overflow-hidden bg-gradient-to-r from-enchanted-purple to-enchanted-pink hover:from-enchanted-pink hover:to-enchanted-pink text-white rounded-md py-2 group transform transition-all duration-300 hover:scale-105 hover:shadow-glow-pink">
+                        <span className="relative z-10 flex items-center justify-center">
+                          <TeaCup size="sm" color="purple" steamAnimation={false} className="mr-2 opacity-80 tea-cup-tilt" />
+                          Serve My Message
+                          <span className="tea-submit-splash"></span>
+                        </span>
+                        <span className="absolute inset-0 bg-white/20 transform scale-0 group-hover:scale-100 transition-all duration-500 origin-bottom rounded-full"></span>
+                        <div className="tea-submit-pour"></div>
+                      </Button>
+                    </form>
+                  </div>
+                  
+                  <div className="absolute -bottom-10 -right-10 opacity-30 pointer-events-none">
+                    <TeaLeaf className="w-28 h-28 animate-float rotate-180" />
+                  </div>
                 </div>
               </div>
             </GlassmorphicCard>
