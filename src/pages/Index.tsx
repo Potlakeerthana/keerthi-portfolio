@@ -39,8 +39,6 @@ const Index = () => {
       <MagicCursor />
       <FallingPetals />
       
-      <NavBar />
-      
       {/* Hero Section */}
       <section className="relative min-h-screen pt-20 flex flex-col items-center justify-center px-6" id="home">
         <div className="absolute inset-0 pointer-events-none">
@@ -557,4 +555,193 @@ const Index = () => {
                 <Award className="w-8 h-8 text-amber-500 flex-shrink-0" />
                 <div>
                   <h3 className="text-lg font-bold mb-1">SQL Certification</h3>
+                </div>
+              </div>
+            </GlassmorphicCard>
+          </div>
+        </div>
+      </section>
+      
+      {/* Contact Section */}
+      <section id="contact" className="py-20 px-6 relative">
+        <div className="container mx-auto max-w-5xl">
+          <div className="text-center mb-12">
+            <div className="inline-block px-3 py-1 rounded-full bg-enchanted-purple/20 backdrop-blur-sm mb-4">
+              <span className="text-sm font-medium text-enchanted-purple-dark flex items-center justify-center">
+                <Mail className="w-4 h-4 mr-1" />
+                Contact
+              </span>
+            </div>
+            
+            <AnimatedHeading 
+              level={2}
+              glowColor="purple"
+              className="mb-4"
+            >
+              Let's Connect
+            </AnimatedHeading>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <GlassmorphicCard
+              glowColor="purple"
+              className="relative transform perspective-card transition-all duration-300 hover:rotate-y-6"
+            >
+              <div className="absolute inset-0 rounded-lg overflow-hidden z-0">
+                <div className="absolute inset-0 bg-gradient-to-br from-enchanted-purple/20 to-enchanted-pink/20"></div>
+              </div>
+              
+              <div className="relative z-10">
+                <div className="tea-set-3d mb-6 transform-gpu rotate-y-[-8deg] hover:rotate-y-[8deg] transition-all duration-300 perspective-700">
+                  <div className="tea-cup-with-saucer relative">
+                    <div className="saucer w-32 h-8 mx-auto rounded-full bg-gradient-to-r from-enchanted-purple/30 to-enchanted-purple/10 shadow-inner transform-gpu -rotate-x-60"></div>
+                    <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[70%]">
+                      <TeaCup size="sm" color="purple" steamAnimation={true} className="transform-gpu -rotate-x-20" />
+                    </div>
+                  </div>
+                </div>
+                
+                <h3 className="text-xl font-display font-bold mb-6 text-center">Drop Me a Message</h3>
+                
+                <p className="text-gray-700 mb-6 leading-relaxed">
+                  I'm always open to discussing new projects, opportunities or partnerships. Feel free to reach out using the form or contact details below.
+                </p>
+                
+                <div className="space-y-4">
+                  <a href="mailto:keerthichowdary8247@gmail.com" className="flex items-center gap-3 px-4 py-3 rounded-lg bg-enchanted-purple/10 hover:bg-enchanted-purple/20 transition-colors group">
+                    <div className="w-10 h-10 rounded-full bg-enchanted-purple/20 flex items-center justify-center">
+                      <Mail className="w-5 h-5 text-enchanted-purple" />
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Email</div>
+                      <div className="font-medium text-enchanted-purple group-hover:translate-x-1 transition-transform">keerthichowdary8247@gmail.com</div>
+                    </div>
+                  </a>
                   
+                  <a href="tel:+918247223038" className="flex items-center gap-3 px-4 py-3 rounded-lg bg-enchanted-purple/10 hover:bg-enchanted-purple/20 transition-colors group">
+                    <div className="w-10 h-10 rounded-full bg-enchanted-purple/20 flex items-center justify-center">
+                      <Phone className="w-5 h-5 text-enchanted-purple" />
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-500">Phone</div>
+                      <div className="font-medium text-enchanted-purple group-hover:translate-x-1 transition-transform">+91-8247223038</div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </GlassmorphicCard>
+            
+            <div className="relative">
+              <GlassmorphicCard
+                glowColor="pink"
+                className="transform transition-all duration-500 hover:translate-z-10 hover:scale-[1.02]"
+              >
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="form-group-3d relative transform-gpu transition-all duration-300 hover:translate-z-8">
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1 transform transition-all duration-300 group-hover:translate-y-[-2px]">Your Name</label>
+                    <div className="relative">
+                      <input
+                        type="text"
+                        id="name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        className="w-full px-4 py-3 rounded-lg bg-white/50 border border-enchanted-pink/30 focus:border-enchanted-pink focus:ring-2 focus:ring-enchanted-pink/20 transition-all shadow-sm"
+                        required
+                      />
+                      <div className="tea-input-effect absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-enchanted-pink to-enchanted-purple transform scale-x-0 origin-left transition-transform group-hover:scale-x-100"></div>
+                    </div>
+                  </div>
+                  
+                  <div className="form-group-3d relative transform-gpu transition-all duration-300 hover:translate-z-8">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1 transform transition-all duration-300 group-hover:translate-y-[-2px]">Your Email</label>
+                    <div className="relative">
+                      <input
+                        type="email"
+                        id="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        className="w-full px-4 py-3 rounded-lg bg-white/50 border border-enchanted-pink/30 focus:border-enchanted-pink focus:ring-2 focus:ring-enchanted-pink/20 transition-all shadow-sm"
+                        required
+                      />
+                      <div className="tea-input-effect absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-enchanted-pink to-enchanted-purple transform scale-x-0 origin-left transition-transform group-hover:scale-x-100"></div>
+                    </div>
+                  </div>
+                  
+                  <div className="form-group-3d relative transform-gpu transition-all duration-300 hover:translate-z-8">
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1 transform transition-all duration-300 group-hover:translate-y-[-2px]">Your Message</label>
+                    <div className="relative">
+                      <textarea
+                        id="message"
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        rows={5}
+                        className="w-full px-4 py-3 rounded-lg bg-white/50 border border-enchanted-pink/30 focus:border-enchanted-pink focus:ring-2 focus:ring-enchanted-pink/20 transition-all shadow-sm"
+                        required
+                      ></textarea>
+                      <div className="tea-input-effect absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-enchanted-pink to-enchanted-purple transform scale-x-0 origin-left transition-transform group-hover:scale-x-100"></div>
+                    </div>
+                  </div>
+                  
+                  <div className="tea-button-3d-container perspective-3d">
+                    <Button 
+                      type="submit" 
+                      className="w-full py-6 rounded-lg bg-gradient-to-r from-enchanted-pink to-enchanted-purple hover:from-enchanted-purple hover:to-enchanted-pink text-white font-medium transform transition-all duration-300 hover:translate-z-4 hover:scale-[1.02] relative overflow-hidden group"
+                    >
+                      <span className="relative z-10 flex items-center justify-center gap-2">
+                        <Send className="w-5 h-5" />
+                        Send Message
+                      </span>
+                      <div className="tea-pour absolute top-0 left-1/2 -translate-x-1/2 w-1 h-0 bg-white/30 group-hover:h-full transition-all duration-700"></div>
+                      <div className="tea-splash absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0 opacity-0 group-hover:w-full group-hover:h-12 group-hover:opacity-100 transition-all duration-500 delay-300 rounded-full bg-white/20"></div>
+                    </Button>
+                  </div>
+                </form>
+              </GlassmorphicCard>
+              
+              <div className="absolute -z-10 inset-0 overflow-hidden pointer-events-none">
+                <div className="tea-leaves-floating">
+                  {[...Array(5)].map((_, i) => (
+                    <div key={i} className={`absolute tea-leaf-float-${i + 1}`} style={{
+                      top: `${Math.random() * 100}%`,
+                      left: `${Math.random() * 100}%`,
+                      animationDelay: `${Math.random() * 5}s`
+                    }}>
+                      <TeaLeaf className="w-8 h-8 opacity-10" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div className="absolute bottom-10 right-10 pointer-events-none">
+          <Butterfly
+            color="purple"
+            size="md"
+            position={{ x: 90, y: 90 }}
+          />
+        </div>
+      </section>
+      
+      {/* Footer */}
+      <footer className="py-8 px-6 bg-enchanted-purple/5">
+        <div className="container mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-600 mb-4 md:mb-0">© 2024 Potla Keerthana. All rights reserved.</p>
+            <div className="flex gap-4">
+              <a href="https://github.com/Potlakeerthana/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-enchanted-purple transition-colors">
+                GitHub
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-enchanted-purple transition-colors">
+                LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Index;
