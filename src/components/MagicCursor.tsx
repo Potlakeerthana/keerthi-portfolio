@@ -33,7 +33,8 @@ export default function MagicCursor() {
         window.getComputedStyle(hoveredElement).cursor === 'pointer'
       );
       
-      setIsHovering(isClickable);
+      // Fixed: Convert to boolean instead of passing the element
+      setIsHovering(Boolean(isClickable));
       
       // Check if it's a "Send" or "Serve" button specifically
       const isSpecialButton = hoveredElement && (
@@ -43,7 +44,8 @@ export default function MagicCursor() {
         (hoveredElement.closest('button')?.textContent || '').includes('Serve')
       );
       
-      setIsOverButton(isSpecialButton);
+      // Fixed: Convert to boolean instead of passing the element
+      setIsOverButton(Boolean(isSpecialButton));
     };
 
     document.addEventListener('mousemove', (e) => {
