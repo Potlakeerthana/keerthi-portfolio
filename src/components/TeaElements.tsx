@@ -174,7 +174,7 @@ export const TeaSaucer = ({ size = 'md', color = 'pink', className }: TeaCupProp
 };
 
 export const TeaCupWithSaucer = ({ size = 'md', color = 'purple', className }: TeaCupProps) => {
-  const cupSizes = {
+  const cupSizes: Record<string, 'sm' | 'md' | 'lg'> = {
     sm: 'sm',
     md: 'md',
     lg: 'lg'

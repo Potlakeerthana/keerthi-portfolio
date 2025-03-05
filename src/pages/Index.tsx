@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import NavBar from '@/components/NavBar';
@@ -10,7 +11,7 @@ import FallingPetals from '@/components/FallingPetals';
 import Firefly from '@/components/Firefly';
 import FloatingElement from '@/components/FloatingElements';
 import Butterfly from '@/components/Butterfly';
-import { TeaCup, TeaLeaf, TeaBackground } from '@/components/TeaElements';
+import { TeaCup, TeaLeaf, TeaBackground, TeaPot, TeaSaucer, TeaCupWithSaucer } from '@/components/TeaElements';
 import { ArrowDown, ArrowRight, Sparkles, Mail, Phone, ExternalLink, FileText, Code, Database, Briefcase, Award, GraduationCap, User, Send } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
