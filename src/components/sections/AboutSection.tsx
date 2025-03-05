@@ -4,7 +4,7 @@ import AnimatedHeading from '@/components/AnimatedHeading';
 import GlassmorphicCard from '@/components/GlassmorphicCard';
 import FloatingElement from '@/components/FloatingElements';
 import { Button } from '@/components/ui/button';
-import { TeaCup, TeaLeaf, TeaBackground, TeaSaucer } from '@/components/TeaElements';
+import { TeaCup, TeaLeaf, TeaBackground, TeaSaucer, TeaPot } from '@/components/TeaElements';
 import { Sparkles } from 'lucide-react';
 
 const AboutSection = () => {
